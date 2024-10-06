@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbox AI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .chatbox {
+            width: 400px;
+            max-width: 100%;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .chatbox-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            border-bottom: 1px solid #ddd;
+        }
+        .chatbox-message {
+            margin-bottom: 15px;
+        }
+        .chatbox-message.user .message {
+            background: #007bff;
+            color: #fff;
+            text-align: right;
+        }
+        .chatbox-message.bot .message {
+            background: #f1f1f1;
+            color: #333;
+        }
+        .message {
+            padding: 10px 15px;
+            border-radius: 15px;
+            max-width: 70%;
+            display: inline-block;
+        }
+        .chatbox-input {
+            display: flex;
+            padding: 15px;
+        }
+        .chatbox-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            margin-right: 10px;
+        }
+        .chatbox-input button {
+            padding: 10px 20px;
+            border: none;
+            background: #007bff;
+            color: #fff;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="chatbox">
+        <div class="chatbox-messages" id="chatbox-messages"></div>
+        <div class="chatbox-input">
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const userInput = document.getElementById('user-input');
+            const message = userInput.value.trim();
+            if (message === '') return;
+            appendMessage('user', message);
+            userInput.value = '';
+            setTimeout(() => generateResponse(message), 1000); // Simulate AI response time
+        }
+
+        function appendMessage(sender, message) {
+            const chatboxMessages = document.getElementById('chatbox-messages');
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('chatbox-message', sender);
+            messageElement.innerHTML = `<div class="message">${message}</div>`;
+            chatboxMessages.appendChild(messageElement);
+            chatboxMessages.scrollTop = chatboxMessages.scrollHeight; // Scroll to the bottom
+        }
+
+        function generateResponse(userMessage) {
+            let botMessage = 'I am not sure how to respond to that.';
+            // Simple keyword-based responses
+            if (userMessage.toLowerCase().includes('hello')) {
+                botMessage = 'Hello! How can I assist you today?';
+            } else if (userMessage.toLowerCase().includes('how are you')) {
+                botMessage = 'I am just a bot, but I am functioning properly!';
+            }
+            appendMessage('bot', botMessage);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Effect Per Character</title>
+    <style>
+        .aut {
+            color: white;
+            white-space: nowrap;
+            font-family: monospace;
+            overflow: hidden;
+            border-right: 2px solid white;
+            display: inline-block;
+            /* Slower typing effect with increased duration */
+            animation: typing 10s steps(60, end), cursor 1s step-end infinite alternate;
+        }
+
+        @keyframes cursor {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        body {
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="aut">
+        <p>
+            Empowering your financial journey with secure and reliable banking solutions tailored to your needs...
+        </p>
+    </div>
+</body>
+</html>

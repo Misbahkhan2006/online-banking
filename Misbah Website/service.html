@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #962929;
+    color: rgb(22, 22, 22);
+    padding: 50px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.services {
+    padding: 50px 0;
+}
+
+.service-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 30px;
+    margin: 20px;
+    width: calc(50% - 40px);
+    float: left;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: #4A90E2;
+    margin-bottom: 20px;
+}
+
+.service-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    clear: both;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Banking Services</h1>
+            <p>Offering secure, convenient, and accessible banking solutions for everyone.</p>
+        </div>
+    </header>
+
+    <section class="services">
+        <div class="container">
+            <div class="service-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h2>Mobile Banking</h2>
+                <p>Manage your account anytime, anywhere with our user-friendly mobile banking app.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-piggy-bank"></i>
+                <h2>Savings Accounts</h2>
+                <p>Open a savings account with attractive interest rates and zero maintenance fees.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-credit-card"></i>
+                <h2>Credit Cards</h2>
+                <p>Choose from a range of credit cards with exciting rewards and benefits.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-university"></i>
+                <h2>Loans & Mortgages</h2>
+                <p>Get fast approvals on loans and mortgage services tailored to your needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Tulip Bank , All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>

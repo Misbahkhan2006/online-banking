@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Divs</title>
+    <style>
+        /* Common styles for divs */
+        .divv, .divvv {
+            height: 300px;
+            width: 400px;
+            background-color: #a53434;
+            margin-bottom: 10px;
+        }
+
+        /* Animation 1 - Fade-in for the first div */
+        .divv {
+            animation: slideIn 2s ease-in forwards;
+        }
+
+        /* Animation 2 - Slide-in from the left for the second div */
+        .divvv {
+            animation: slideIn 2s ease-in forwards;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="divv"></div>
+
+    <div class="divvv"></div>
+   
+</body>
+</html>
